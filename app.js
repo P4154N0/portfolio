@@ -215,13 +215,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Restore saved language if any
   var savedLang = localStorage.getItem('appLanguage');
   if (savedLang) {
     setLanguage(savedLang);
   }
 
-  // Radio Stream Player Logic
   var stationSelect = document.getElementById('stationSelect');
   var radioPlayerAudio = document.getElementById('radioPlayerAudio');
   var radioPlayerIframe = document.getElementById('radioPlayerIframe');
@@ -268,7 +266,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (savedStation) {
       stationSelect.value = savedStation;
     }
-    // Auto load current selection silently or ready state
     playStream(stationSelect.value);
   }
 });
