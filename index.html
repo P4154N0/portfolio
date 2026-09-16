@@ -214,22 +214,6 @@
 
   <hr class="rule">
 
-  <!-- ===== CONTACT / CTA ===== -->
-  <section class="section contact-section container" id="contact">
-    <p class="eyebrow" data-i18n="ctaEyebrow">CONNECT &amp; EVOLVE</p>
-    <h2 class="section-title contact-title" data-i18n="ctaTitle">Interested in backend systems<br>for industrial
-      infrastructure?</h2>
-
-    <div class="contact-links">
-      <a href="https://www.linkedin.com/in/hector-pablo-graff/" class="btn-secondary" target="_blank" rel="noopener"
-        data-i18n="btnLinkedin">LinkedIn Profile</a>
-      <a href="https://github.com/P4154N0" class="btn-secondary" target="_blank" rel="noopener"
-        data-i18n="btnGithub">GitHub Repositories</a>
-    </div>
-  </section>
-
-  <hr class="rule">
-
   <!-- ===== FEATURED PROJECTS & SYSTEMS ===== -->
   <section class="section container" id="projects">
     <p class="eyebrow" data-i18n="projectsEyebrow">FEATURED PROJECTS &amp; SYSTEMS</p>
@@ -244,8 +228,7 @@
         <div>
           <div
             style="position: relative; margin-bottom: 14px; border-radius: 6px; overflow: hidden; border: 1px solid var(--line); height: 180px;">
-            <img src="img/eficiente.png" alt="EnergIAi Dashboard"
-              style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="img/eficiente.png" alt="EnergIAi Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
             <span class="stack-index" style="margin: 0;">01 // ACTIVE SYSTEM</span>
@@ -261,10 +244,10 @@
           <a href="http://163.176.43.143:8080/" target="_blank" rel="noopener noreferrer" class="btn-secondary"
             style="flex: 1; text-align: center; font-size: 13px; padding: 8px 12px; border-color: var(--cyan); color: var(--cyan);"
             data-i18n="btnLiveAppEnergiai">Live App</a>
-          
+
           <a href="https://github.com/P4154N0/energiai" target="_blank" rel="noopener noreferrer" class="btn-secondary"
-            style="flex: 1; text-align: center; font-size: 13px; padding: 8px 12px;"
-            data-i18n="btnRepo">View Repository</a>
+            style="flex: 1; text-align: center; font-size: 13px; padding: 8px 12px;" data-i18n="btnRepo">View
+            Repository</a>
         </div>
       </article>
 
@@ -274,7 +257,8 @@
         <div>
           <div
             style="position: relative; margin-bottom: 14px; border-radius: 6px; overflow: hidden; border: 1px solid var(--line); height: 180px;">
-            <img src="img/declinacion_reservorio_por_pozo.png" alt="Curvas de declinación de producción por pozo — dataset Volve"
+            <img src="img/declinacion_reservorio_por_pozo.png"
+              alt="Curvas de declinación de producción por pozo — dataset Volve"
               style="width: 100%; height: 100%; object-fit: cover;">
           </div>
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
@@ -288,7 +272,8 @@
           </p>
         </div>
         <div>
-          <a href="https://github.com/P4154N0/volve-energy-monitor" target="_blank" rel="noopener noreferrer" class="btn-secondary"
+          <a href="https://github.com/P4154N0/volve-energy-monitor" target="_blank" rel="noopener noreferrer"
+            class="btn-secondary"
             style="width: 100%; text-align: center; font-size: 13px; padding: 8px 12px; margin-top: 8px;"
             data-i18n="btnRepo">View Repository</a>
           <span class="node-tag" style="display: block; text-align: center; font-size: 11.5px; padding: 8px 0;"
@@ -320,6 +305,64 @@
         </div>
       </article>
 
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ===== CULTURAL PULSE: COUNTRY CALGARY FM RADIO COMPONENT ===== -->
+  <section class="section container">
+    <div class="side-card radio-component-card">
+      <div class="radio-header-flex">
+        <div>
+          <span class="eyebrow eyebrow-orange" data-i18n="radioEyebrow">// CALGARY CULTURAL PULSE</span>
+          <h3 class="section-title" style="font-size: 20px; margin-bottom: 8px;" data-i18n="radioTitle">Country Calgary
+            FM — Live Audio Feed</h3>
+          <p class="side-text" data-i18n="radioSub">Inmersión cultural en directo desde Alberta, conectando con el
+            entorno industrial y regional de destino.</p>
+        </div>
+        <div class="radio-badge-container">
+          <img src="img/country-calgary-fm.png" alt="Country Calgary FM" class="radio-badge-img">
+        </div>
+      </div>
+
+      <div class="radio-controls-wrapper">
+        <div class="select-container" style="flex: 1; max-width: 400px;">
+          <label for="stationSelect" class="side-label" data-i18n="stationLabel" style="margin-bottom: 6px;">SELECT
+            STATION / EMISORA</label>
+          <div class="custom-select-wrapper">
+            <select id="stationSelect" name="stationSelect" class="premium-select">
+              <option value="https://www.wild953.com/player/?playerID=475">🎙️ WILD 95.3 Calgary</option>
+              <option value="https://corus.leanstream.co/CKRYFM">🎵 Country 105 (CKRY-FM)</option>
+              <option value="https://newcap.leanstream.co/CIBQFM">📻 Real Country Q 105.7</option>
+              <option value="https://www.iheart.com/live/985-virgin-radio-7492/">🌾 Virgin Radio Calgary</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="media-container" style="margin-top: 16px;">
+        <iframe id="radioPlayerIframe" width="100%" height="90" src="" frameborder="0" allow="autoplay"
+          style="display:none;" title="Live Web Player"></iframe>
+        <audio id="radioPlayerAudio" controls autoplay style="display:none;" aria-label="Live Audio Stream"></audio>
+        <div id="errorMsg" class="error-msg" style="display:none;"></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ===== CONTACT / CTA ===== -->
+  <section class="section contact-section container" id="contact">
+    <p class="eyebrow" data-i18n="ctaEyebrow">CONNECT &amp; EVOLVE</p>
+    <h2 class="section-title contact-title" data-i18n="ctaTitle">Interested in backend systems<br>for industrial
+      infrastructure?</h2>
+
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/hector-pablo-graff/" class="btn-secondary" target="_blank" rel="noopener"
+        data-i18n="btnLinkedin">LinkedIn Profile</a>
+      <a href="https://github.com/P4154N0" class="btn-secondary" target="_blank" rel="noopener"
+        data-i18n="btnGithub">GitHub Repositories</a>
     </div>
   </section>
 

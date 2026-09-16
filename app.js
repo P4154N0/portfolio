@@ -168,8 +168,29 @@ document.addEventListener('DOMContentLoaded', function () {
     proj3Tag: {
       en: 'OFFLINE-FIRST ARCHITECTURE',
       es: 'ARQUITECTURA OFFLINE-FIRST'
+    },
+    // ===== RADIO SECTION I18N =====
+    radioEyebrow: {
+      en: '// CALGARY CULTURAL PULSE',
+      es: '// PULSO CULTURAL DE CALGARY'
+    },
+    radioTitle: {
+      en: 'Country Calgary FM — Live Audio Feed',
+      es: 'Country Calgary FM — Transmisión en Vivo'
+    },
+    radioSub: {
+      en: 'Live cultural immersion from Alberta, connecting directly with the target regional industrial environment.',
+      es: 'Inmersión cultural en directo desde Alberta, conectando con el entorno industrial y regional de destino.'
+    },
+    stationLabel: {
+      en: 'SELECT STATION / EMISORA',
+      es: 'SELECCIONAR EMISORA'
+    },
+    errorDefault: {
+      en: 'Error playing this station. Please try another one.',
+      es: 'Error al reproducir esta emisora. Probá con otra.'
     }
-  }; // <--- Este es el cierre de la variable translations
+  };
 
   var langButtons = document.querySelectorAll('.lang-btn');
   var i18nEls = document.querySelectorAll('[data-i18n]');
@@ -185,6 +206,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
     document.documentElement.setAttribute('lang', lang);
+    localStorage.setItem('appLanguage', lang);
   }
 
   langButtons.forEach(function (btn) {
@@ -192,4 +214,61 @@ document.addEventListener('DOMContentLoaded', function () {
       setLanguage(btn.getAttribute('data-lang'));
     });
   });
+
+  // Restore saved language if any
+  var savedLang = localStorage.getItem('appLanguage');
+  if (savedLang) {
+    setLanguage(savedLang);
+  }
+
+  // Radio Stream Player Logic
+  var stationSelect = document.getElementById('stationSelect');
+  var radioPlayerAudio = document.getElementById('radioPlayerAudio');
+  var radioPlayerIframe = document.getElementById('radioPlayerIframe');
+  var errorMsg = document.getElementById('errorMsg');
+
+  function playStream(url) {
+    if (!stationSelect) return;
+    errorMsg.style.display = 'none';
+    errorMsg.textContent = '';
+
+    radioPlayerAudio.style.display = 'none';
+    radioPlayerIframe.style.display = 'none';
+    radioPlayerAudio.pause();
+    radioPlayerAudio.src = '';
+    radioPlayerIframe.src = '';
+
+    if (url.includes('playerID=')) {
+      radioPlayerIframe.src = url;
+      radioPlayerIframe.style.display = 'block';
+    } else {
+      radioPlayerAudio.src = url;
+      radioPlayerAudio.load();
+      radioPlayerAudio.style.display = 'block';
+
+      var playPromise = radioPlayerAudio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(function (error) {
+          var currentActiveLang = document.documentElement.getAttribute('lang') || 'en';
+          errorMsg.textContent = translations['errorDefault'][currentActiveLang];
+          errorMsg.style.display = 'block';
+          radioPlayerAudio.pause();
+        });
+      }
+    }
+  }
+
+  if (stationSelect) {
+    stationSelect.addEventListener('change', function () {
+      playStream(stationSelect.value);
+      localStorage.setItem('selectedRadioStation', stationSelect.value);
+    });
+
+    var savedStation = localStorage.getItem('selectedRadioStation');
+    if (savedStation) {
+      stationSelect.value = savedStation;
+    }
+    // Auto load current selection silently or ready state
+    playStream(stationSelect.value);
+  }
 });
