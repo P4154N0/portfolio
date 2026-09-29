@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
       es: 'Desarrollador Backend respaldado por más de 20 años de experiencia técnica en infraestructura electromecánica, electrónica y telecomunicaciones. Combino formación terciaria en sistemas con ingeniería backend moderna para traducir datos del mundo físico en arquitectura de software confiable.'
     },
     historyP2: {
-      en: 'Core focus is on <span class="c-cyan">Java 21 LTS</span>, <span class="c-cyan">Spring Boot 3</span>, <span class="c-orange">PostgreSQL/Flyway</span>, and OCI Cloud services. Actively preparing for SAIT 2028 with a long-term focus on energy sector infrastructure in Calgary, Alberta.',
-      es: 'Mi foco principal está en <span class="c-cyan">Java 21 LTS</span>, <span class="c-cyan">Spring Boot 3</span>, <span class="c-orange">PostgreSQL/Flyway</span> y servicios Cloud OCI. En preparación activa hacia SAIT 2028 con objetivo en la industria energética de Calgary, Alberta.'
+      en: 'Core focus is on <span class="c-cyan">Java 21 LTS</span>, <span class="c-cyan">Spring Boot 3</span>, <span class="c-orange">PostgreSQL/Flyway</span>, and OCI Cloud services. Actively driving value for the Energy &amp; Industrial Software Ecosystem in Calgary, Alberta.',
+      es: 'Mi foco principal está en <span class="c-cyan">Java 21 LTS</span>, <span class="c-cyan">Spring Boot 3</span>, <span class="c-orange">PostgreSQL/Flyway</span> y servicios Cloud OCI. Impulsando valor activamente para el Ecosistema de Software Industrial y Energético en Calgary, Alberta.'
     },
     certLabel: {
       en: 'CERTIFICATION ROADMAP',
@@ -49,8 +49,8 @@ document.addEventListener('DOMContentLoaded', function () {
       es: 'ENFOQUE ACTUAL Y OBJETIVO'
     },
     focusText: {
-      en: 'Java 21 Backend &amp; Cloud Interoperability.<br>Target: SAIT 2028 &amp; Energy Industry in Calgary, AB.',
-      es: 'Backend Java 21 e Interoperabilidad Cloud.<br>Objetivo: SAIT 2028 e Industria Energética en Calgary, AB.'
+      en: 'Java 21 Backend &amp; Cloud Interoperability.<br>Target: Energy &amp; Industrial Software Ecosystem // Calgary, AB.',
+      es: 'Backend Java 21 e Interoperabilidad Cloud.<br>Objetivo: Ecosistema de Software Industrial y Energético // Calgary, AB.'
     },
     stackEyebrow: {
       en: 'TECHNOLOGY STACK',
@@ -168,6 +168,27 @@ document.addEventListener('DOMContentLoaded', function () {
     proj3Tag: {
       en: 'OFFLINE-FIRST ARCHITECTURE',
       es: 'ARQUITECTURA OFFLINE-FIRST'
+    },
+    // ===== TOOLS SECTION =====
+    toolsEyebrow: {
+      en: '// FIELD ENGINEERING TOOLS',
+      es: '// HERRAMIENTAS DE INGENIERÍA DE CAMPO'
+    },
+    toolsTitle: {
+      en: 'Tactical Utilities &amp; Geo-Analysis',
+      es: 'Utilidades Tácticas y Geo-Análisis'
+    },
+    statusLive: {
+      en: 'Live Tool',
+      es: 'Herramienta Activa'
+    },
+    tool1Desc: {
+      en: 'Zero-Build geospatial modeling tool for mathematical delimitation of electromagnetic interference. Solves trigonometric calculations on the Earth ellipsoid directly in the browser. Used in real tactical operations supporting radiocommunication inspectors.',
+      es: 'Herramienta de modelado geoespacial <em>Zero-Build</em> para delimitación matemática de interferencias electromagnéticas. Resuelve cálculos trigonométricos sobre el elipsoide directamente en el navegador. Utilizada en operaciones tácticas reales de soporte a inspectores de radiocomunicaciones.'
+    },
+    btnLiveTool: {
+      en: 'Launch Tool',
+      es: 'Iniciar Herramienta'
     },
     // ===== RADIO SECTION I18N =====
     radioEyebrow: {
